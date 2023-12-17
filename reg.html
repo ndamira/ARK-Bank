@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Tag</title>
+</head>
+<body>
+    
+<h2>HTML Input Tag</h2>
+
+
+    Loan :<br>
+    <input type="number" id="loan" name="loan" oninput="calculateSum()">
+    <br>
+    Period:<br>
+    <input type="number" id="period" name="period" oninput="calculateSum()">
+    <br>
+    Years:<br>
+    <input type="number" id="years" name="years" oninput="calculateSum()">
+    <br>
+    Rate:<br>
+    <input type="number" id="rate" name="rate" oninput="calculateSum()">
+    <br>
+    Monthly Payment:<br>
+    <input type="text" id="monthly" name="monthly" readonly>
+    <br>
+    Total Interest:<br>
+    <input type="text" id="interest" name="interest" readonly>
+    <br>
+    Total Payment:<br>
+    <input type="text" id="payment" name="payment" readonly>
+    <br>
+    Mult:<br>
+    <input type="text" id="mult" name="mult" readonly>
+    <br>
+    div:<br>
+    <input type="text" id="div" name="div" readonly>
+    <br>
+    both:<br>
+    <input type="text" id="both" name="both" readonly>
+    <br><br>
+    
+
+<script>
+function calculateSum() {
+ var loan = document.getElementById('loan').value;
+ var period = document.getElementById('period').value;
+ var years = document.getElementById('years').value;
+ var rate = document.getElementById('rate').value;
+
+//  numerator
+ var r = parseInt(rate) /100 ;
+ var t = r * parseInt(loan) ;
+ var t1 = t / parseInt(period) ;
+
+// denominator
+ var d = - parseInt(period) * parseInt(years);
+ var d1 = 1 + (r/parseInt(period));
+ var d2 = d1 ** d;
+ var d3 = 1 - d2;
+ var p = t1 / d3;
+
+ document.getElementById('mult').value = t1;
+ document.getElementById('div').value = d3;
+ document.getElementById('both').value = p;
+}
+</script>
+</body>
+</html>

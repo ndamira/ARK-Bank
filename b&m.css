@@ -1,0 +1,282 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar{
+    background: none;
+    z-index: 1;
+    width: 90%;
+    padding: 0px 100px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 50px;
+    transform: rotateX('-50%');
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-list ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar-list ul li{
+    margin-left: 50px;
+}
+
+.navbar-list ul li a{
+    font-size: 15px;
+    text-decoration: none;
+    color: rgb(37, 32, 32);
+    font-weight: bold;
+    display: block;
+}
+
+.navbar-list ul li button{
+    background: linear-gradient(112.82deg, rgb(36, 3, 30), rgb(93, 95, 90));
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: aliceblue;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: .4s ease;
+    text-transform: uppercase;
+}
+
+.navbar-list ul li button:hover{
+    transform: translateX(5px)
+}
+.navbar-list ul li a:hover{
+    color: rgb(48, 141, 202);
+}
+.scroll{
+    background: white;
+    top: -100px;
+    border-radius: 20px;
+    width: 90%;
+    animation: fadedown .4s ease 1s forwards;
+}
+
+@keyframes fadedown{
+    0%{
+        top: -100px;
+    }
+    100%{
+        top: 20px;
+    }
+}
+.navbar-brand{
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 20px;
+    /*background: linear-gradient(112.82deg, rgb(185, 122, 3), rgb(157, 252, 6));
+    -webkit-background-clip: text;*/
+    color: rgb(4, 146, 37);
+}
+.navbar a{
+    text-decoration: none;
+}
+.mb{
+    width: 100%;
+    height: 500px;
+    opacity: 40%;
+    font-weight: bold;
+}
+
+.texts pre{
+    margin-top: -20%;
+    margin-left: 13%;
+    font-size: 50px;
+    position: absolute;
+    text-transform: uppercase;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    font-weight: bold;
+}
+.desc{
+    background-color: rgb(210, 233, 226);
+    margin-top: -6px;
+    margin-left: -3%;
+    text-align: center;
+}
+.desc pre{
+    font-size: 20px;
+}
+.desc pre span{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/*mortage calculator*/
+
+.input{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    min-height: 100vh;
+    flex-direction: row;
+    gap: 30px;
+    background-color: rgb(9, 16, 32);
+    
+}
+.inputbox{
+    position: relative;
+    width: 250px;   
+    
+}
+
+.inputbox input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid white;
+    background-color: rgb(9, 16, 32);
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    font-size: 1em;
+    
+}
+
+.inputbox span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: aliceblue;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.inputbox input:valid ~span,
+.inputbox input:focus ~span
+
+{
+    color: aquamarine;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background-color: rgb(9, 16, 32);
+    border-left: 1px solid aquamarine;
+    border-right: 1px solid aquamarine;
+    letter-spacing: 0.2em;
+}
+
+.inputbox:nth-child(2) input:valid ~span,
+.inputbox:nth-child(2) input:focus ~span
+{
+    background-color: aquamarine;
+    background-color: rgb(9, 16, 32);
+    border-radius: 2px;
+}
+
+.inputbox input:valid,
+.inputbox input:focus
+{
+    border: 1px solid aquamarine;
+}
+
+.main{
+    background-color: rgb(9, 16, 32);
+}
+
+.head1{
+    color: aliceblue;
+    margin-left: 33%;
+    padding-top: 100px;
+}
+hr{
+    margin-left: 33%;
+    width: 415px;
+}
+.butto{
+    margin-top: -30%;
+    margin-left: 40%;
+}
+button{
+    cursor: pointer;
+    padding: 10px 10px 10px 10px;
+    font-size: 13px;
+}
+button:hover{
+    background-color: rgb(214, 197, 231);
+}
+.main1{
+    margin-top: -430px;
+}
+
+/* outputboxes */
+
+.out{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    min-height: 100vh;
+    flex-direction: row;
+    gap: 30px;
+    background-color: rgb(9, 16, 32);
+    
+}
+.outputbox{
+    position: relative;
+    width: 250px;   
+    
+}
+
+.outputbox input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid white;
+    background-color: rgb(9, 16, 32);
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    font-size: 1em;
+    
+}
+
+.outputbox span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: aliceblue;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.outputbox span
+
+{
+    color: rgb(254, 255, 255);
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background-color: rgb(9, 16, 32);
+    border-left: 1px solid aquamarine;
+    border-right: 1px solid aquamarine;
+    letter-spacing: 0.2em;
+}
+
+/* .outputbox:nth-child(2) input:valid ~span,
+.outputbox:nth-child(2) input:focus ~span
+{
+    background-color: aquamarine;
+    background-color: rgb(9, 16, 32);
+    border-radius: 2px;
+} */
+
+.outputbox input:valid,
+.outputbox input:focus
+{
+    border: 1px solid aquamarine;
+    
+}

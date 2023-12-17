@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <title>Borrow and Mortgage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="b&m.css">
+
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html"><div class="navbar-brand">
+            <h1>ARK BANK</h1>
+        </div></a>
+
+        <div class="navbar-list">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">Partner</a></li>
+                <li><a href="">About Us</a></li>
+                <!--<li><a href="">Investor Relation</a></li>
+                <li><a href="">Sustainability</a></li>-->
+                <li><a href="form.html">Borrow and Mortgage</a></li>
+                <li><a href="contact.html"><button>Contact</button></a></li>
+            </ul>
+        </div>
+    </nav>
+    <img class="mb" src="3.avif" alt="">
+    <div class="texts">
+        <pre>
+            Get a Mortgage Loan
+        </pre>
+    </div>
+    <div class="desc">
+        <pre>
+            <span>               
+                Fully secured term home loans designed to suit 
+        your personal housing needs.</span>
+
+            A product designed to meet a wide range of needs such as purchase of property, undeveloped plot, 
+            construction, renovations etc.
+        </pre>
+    </div>
+
+    <!--mortgage calculator-->
+    
+    <form action="/submit">
+
+        <!--input boxes-->
+
+        <div class="main">
+            <h1 class="head1">Mortgage Loan Calculator</h1>
+            <hr>
+            <div class="input">
+                <div class="inputbox">
+                    <input type="number" id="loan" name="loan" required="required" oninput="calculateMortgage()">
+                    <span>Loan Amount</span>
+                </div>
+                <div class="inputbox">
+                    <input type="number" id="period" name="period" required="required" oninput="calculateMortgage()">
+                    <span>Payment Period (Months)</span>
+                </div>
+                <div class="inputbox">
+                    <input type="number" id="years" name="years" required="required" oninput="calculateMortgage()">
+                    <span>Years</span>
+                </div>
+                <div class="inputbox">
+                    <input type="number" id="rate" name="rate" required="required" oninput="calculateMortgage()">
+                    <span>Rate (%)</span>
+                </div>
+            </div>
+        </div>
+        
+        <!--output boxes-->
+        <div class="main1">
+        <div class="out">
+            <div class="outputbox">
+                <input type="number" id="monthly" name="monthly" readonly>
+                <span>Monthly Payment</span>
+            </div>
+            <div class="outputbox">
+                <input type="number" id="interest" name="interest" readonly>
+                <span>Total Interest</span>
+            </div>
+            <div class="outputbox">
+                <input type="number" id="payment" name="payment" readonly>
+                <span>Total Payment</span>
+            </div>
+        </div>
+        </div>
+   </form> 
+   <script src="index.js"></script>
+   <script>
+   function calculateMortgage() {
+    var loan = document.getElementById('loan').value;
+    var period = document.getElementById('period').value;
+    var years = document.getElementById('years').value;
+    var rate = document.getElementById('rate').value;
+
+    // numerator
+    var r = parseInt(rate) / 100;
+    var t = r * parseInt(loan);
+    var t1 = t / parseInt(period);
+
+    // denominator
+    var d = - parseInt(period) * parseInt(years);
+    var d1 = 1 + ( r / parseInt(period));
+    var d2 = d1 ** d;
+    var d3 = 1 - d2;
+
+    // Mortgage Payment
+    var p = Math.round(t1 / d3);
+
+    // Total Amount
+    var a = Math.round(p * parseInt(period) * parseInt(years));
+
+    // Total Interest
+    var i = a - parseInt(loan);
+
+
+    var sum = parseInt(loan) + parseInt(period);
+    document.getElementById('monthly').value = p;
+    document.getElementById('payment').value = a;
+    document.getElementById('interest').value = i;
+   }
+   </script>
+</body>
+</html>
